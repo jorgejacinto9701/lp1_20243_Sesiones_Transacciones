@@ -28,11 +28,15 @@
                     	requestScope : memoria request
                         sessionScope : memoria session
                     -->
-									
+					<%
+				       	String mensaje = (String)request.getAttribute("mensaje");
+						if (mensaje != null){
+				    %>			
                 	<div class="alert alert-danger fade in" id="success-alert">
 				        <a href="#" class="close" data-dismiss="alert">&times;</a>
-				        
+				        	<%= mensaje %>
 				    </div>
+				    <% } %>
 		            <div class="row">
                         <div class="col-sm-6 col-sm-offset-3 form-box">
                         	<div class="form-top">

@@ -1,3 +1,5 @@
+<%@page import="entidad.Enlace"%>
+<%@page import="java.util.List"%>
 <div class="container">
  <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
@@ -20,13 +22,17 @@
 	          Menú<b class="caret"></b>
 	        </a>
 	        <ul class="dropdown-menu">
-	        	<c:forEach var="x" items="${sessionScope.objMenus}">
-					<li>
-	        			<a href="${x.ruta}">
-	        				${x.descripcion}
+	        	<%
+	        		List<Enlace> lstMenus = (List<Enlace>)	session.getAttribute("objMenus");
+	        	    if (lstMenus!= null){
+	        	     for (Enlace obj: lstMenus)	{
+	        	%>
+	        		<li>
+	        			<a href="<%= obj.getRuta() %>">
+	        				<%= obj.getDescripcion() %>
 	        			</a>
 	        		</li>
-	        	</c:forEach>
+	        	<% }} %>		
 	        </ul>
      	</li>
      </ul>

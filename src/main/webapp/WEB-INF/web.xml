@@ -9,4 +9,12 @@
 		<welcome-file>login.jsp</welcome-file>
 	</welcome-file-list>
 
+	<!-- Tiempo de la sesión (minutos) -->
+	<!-- El -1 significa un tiempo indefinido -->
+	<!-- Tiempo aproximado -->
+	<session-config>
+		<session-timeout>1</session-timeout>
+	</session-config>
+	
+	
 </web-app>
